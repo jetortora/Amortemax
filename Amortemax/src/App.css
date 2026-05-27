@@ -1,0 +1,509 @@
+/* ── Variáveis ── */
+:root {
+  --amarelo: #ffc200;
+  --amarelo-escuro: #e6ae00;
+  --preto: #1a1a1a;
+  --texto: #333333;
+  --texto-suave: #666666;
+  --branco: #ffffff;
+  --cinza-bg: #f5f5f5;
+  --whatsapp: #25d366;
+  --whatsapp-hover: #1db954;
+  --sombra: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --sombra-hover: 0 8px 28px rgba(0, 0, 0, 0.14);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+/* ── Layout base ── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Header ── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--preto);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.header-logo {
+  height: 56px;
+  width: auto;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav a {
+  color: var(--amarelo);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: var(--branco);
+}
+
+/* ── Hero ── */
+.hero {
+  background: var(--amarelo);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito marca d'água: multiply funde o branco da foto com o fundo amarelo */
+.hero-watermark {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 130%;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  opacity: 0.22;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text {
+  max-width: 580px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--preto);
+  color: var(--amarelo);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--preto);
+  margin-bottom: 12px;
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--preto);
+  margin-bottom: 18px;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  color: var(--texto);
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ── Ícone WhatsApp ── */
+.wa-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ── Botões ── */
+.btn {
+  display: inline-block;
+  padding: 13px 30px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  background: var(--preto);
+  color: var(--amarelo);
+}
+
+.btn-dark:hover {
+  background: #333;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn-whatsapp {
+  background: var(--whatsapp);
+  color: var(--branco);
+}
+
+.btn-whatsapp:hover {
+  background: var(--whatsapp-hover);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  background: var(--whatsapp);
+  color: var(--branco);
+  border-radius: var(--radius-sm);
+  margin-top: 4px;
+}
+
+.btn-submit:hover {
+  background: var(--whatsapp-hover);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+/* ── Seções ── */
+.section {
+  padding: 88px 0;
+}
+
+.section-gray {
+  background: var(--cinza-bg);
+}
+
+.section-yellow {
+  background: var(--amarelo);
+}
+
+.section-titulo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--preto);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.section-titulo.left {
+  text-align: left;
+}
+
+.section-sub {
+  font-size: 1rem;
+  color: var(--texto-suave);
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+/* ── Serviços ── */
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.servico-card {
+  background: var(--branco);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.servico-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-hover);
+}
+
+.servico-img-wrap {
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.servico-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 16px;
+}
+
+.servico-info {
+  padding: 22px;
+}
+
+.servico-info h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--preto);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.servico-info p {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+  line-height: 1.6;
+}
+
+/* ── Endereço ── */
+.endereco-inner {
+  display: flex;
+  gap: 64px;
+  align-items: flex-start;
+}
+
+.endereco-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.endereco-info .section-titulo {
+  margin-bottom: 0;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info-label {
+  display: inline-block;
+  background: var(--preto);
+  color: var(--amarelo);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.info-item p {
+  font-size: 0.98rem;
+  color: var(--texto);
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+.mapa-wrap {
+  flex: 1;
+}
+
+/* ── Formulário ── */
+.formulario {
+  max-width: 740px;
+  margin: 0 auto;
+  background: var(--cinza-bg);
+  padding: 44px 48px;
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-linha {
+  display: flex;
+  gap: 16px;
+}
+
+.form-grupo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-ano {
+  flex: 0 0 130px;
+}
+
+.form-grupo label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--preto);
+  letter-spacing: 0.2px;
+}
+
+.form-grupo input,
+.form-grupo textarea {
+  padding: 12px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--preto);
+  background: var(--branco);
+  transition: border-color 0.2s;
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+  outline: none;
+  border-color: var(--amarelo);
+}
+
+.form-grupo textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ── Footer ── */
+.footer {
+  background: var(--preto);
+  padding: 40px 0 28px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.footer-logo {
+  height: 56px;
+  width: auto;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+  margin-bottom: 4px;
+}
+
+.footer-nome {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--amarelo);
+}
+
+.footer-text p {
+  font-size: 0.9rem;
+  color: #aaa;
+  line-height: 1.7;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 8px;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 960px) {
+  .hero-watermark {
+    height: 80%;
+    opacity: 0.15;
+    right: -30px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.1rem;
+  }
+
+  .servicos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .endereco-inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .mapa-wrap {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav {
+    gap: 16px;
+  }
+
+  .nav a {
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 52px 0;
+  }
+
+  .hero-watermark {
+    height: 60%;
+    opacity: 0.12;
+  }
+
+  .hero-text h1 {
+    font-size: 1.75rem;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-titulo {
+    font-size: 1.6rem;
+  }
+
+  .servicos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .formulario {
+    padding: 28px 20px;
+  }
+
+  .form-linha {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-ano {
+    flex: 1;
+  }
+}
