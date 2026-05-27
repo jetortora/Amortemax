@@ -210,6 +210,18 @@
   background: var(--cinza-bg);
 }
 
+.section-dark {
+  background: #111111;
+}
+
+.section-dark .section-titulo {
+  color: var(--branco);
+}
+
+.section-dark .section-sub {
+  color: #888888;
+}
+
 .section-yellow {
   background: var(--amarelo);
 }
@@ -236,56 +248,58 @@
 /* ── Serviços ── */
 .servicos-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.servico-card:nth-child(5) {
+  grid-column-start: 2;
 }
 
 .servico-card {
-  background: var(--branco);
+  background: #1c1c1c;
+  border: 1px solid #2a2a2a;
   border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--sombra);
-  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 36px 24px;
+  text-align: center;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
 .servico-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--sombra-hover);
+  transform: translateY(-4px);
+  border-color: rgba(255, 194, 0, 0.35);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
 }
 
-.servico-img-wrap {
-  width: 100%;
-  height: 210px;
-  overflow: hidden;
-  background: #f0f0f0;
+.servico-icone {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto 22px;
+  color: var(--amarelo);
 }
 
-.servico-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 16px;
+.servico-icone-svg {
+  width: 44px;
+  height: 44px;
 }
 
 .servico-info {
-  padding: 22px;
+  padding: 0;
 }
 
 .servico-info h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--preto);
-  margin-bottom: 8px;
+  color: var(--branco);
+  margin-bottom: 10px;
   line-height: 1.35;
 }
 
 .servico-info p {
-  font-size: 0.9rem;
-  color: var(--texto-suave);
-  line-height: 1.6;
+  font-size: 0.875rem;
+  color: #888888;
+  line-height: 1.65;
 }
 
 /* ── Endereço ── */
@@ -448,6 +462,10 @@
 
   .servicos-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .servico-card:nth-child(5) {
+    grid-column-start: auto;
   }
 
   .endereco-inner {

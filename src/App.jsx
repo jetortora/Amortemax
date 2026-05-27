@@ -1,12 +1,6 @@
 import { useState } from 'react'
-import logo from './img/logo.jpeg'
-import amortecedor from './img/amortecedor.jpeg'
-import peca01 from './img/peca01.jpeg'
-import peca02 from './img/peca02.jpeg'
-import peca03 from './img/peca03.jpeg'
-import peca04 from './img/peca04.jpeg'
-import peca05 from './img/peca05.jpeg'
-import peca06 from './img/peca06.jpeg'
+import logo from './img/logo.png'
+import amortecedor from './img/amortecedor.png'
 import './App.css'
 
 const WHATSAPP_CONTATO = '5514997183644'
@@ -26,36 +20,95 @@ function IconWhatsApp() {
   )
 }
 
+function IconAmortecedorNovo() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="servico-icone-svg" aria-hidden="true">
+      <circle cx="12" cy="12" r="10"/>
+      <circle cx="12" cy="12" r="5.5"/>
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+    </svg>
+  )
+}
+
+function IconRemanufaturado() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="servico-icone-svg" aria-hidden="true">
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+    </svg>
+  )
+}
+
+function IconSuspensao() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="servico-icone-svg" aria-hidden="true">
+      <path d="M2 15l2.5-6h15l2.5 6v1H2v-1z"/>
+      <circle cx="7" cy="18" r="2"/>
+      <circle cx="17" cy="18" r="2"/>
+    </svg>
+  )
+}
+
+function IconFreios() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="servico-icone-svg" aria-hidden="true">
+      <circle cx="12" cy="12" r="10"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="12" cy="5" r="1.2" fill="currentColor" stroke="none"/>
+      <circle cx="17.4" cy="8.5" r="1.2" fill="currentColor" stroke="none"/>
+      <circle cx="17.4" cy="15.5" r="1.2" fill="currentColor" stroke="none"/>
+      <circle cx="12" cy="19" r="1.2" fill="currentColor" stroke="none"/>
+      <circle cx="6.6" cy="15.5" r="1.2" fill="currentColor" stroke="none"/>
+      <circle cx="6.6" cy="8.5" r="1.2" fill="currentColor" stroke="none"/>
+    </svg>
+  )
+}
+
+function IconEscapamentos() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="servico-icone-svg" aria-hidden="true">
+      <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2 2 0 1 1 19.73 12H22"/>
+    </svg>
+  )
+}
+
+function IconOleo() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="servico-icone-svg" aria-hidden="true">
+      <path d="M12 2C12 2 5 10 5 15a7 7 0 0 0 14 0C19 10 12 2 12 2z"/>
+    </svg>
+  )
+}
+
 const servicos = [
   {
-    img: peca01,
-    titulo: 'Amortecedores Seminovos Turbo Gás',
-    desc: 'Revisados com garantia, a opção ideal para economizar sem abrir mão de qualidade e segurança.',
+    Icone: IconAmortecedorNovo,
+    titulo: 'Amortecedores Novos',
+    desc: 'As principais marcas do mercado para quem busca o desempenho original de fábrica.',
   },
   {
-    img: peca02,
-    titulo: 'Amortecedores de Porta-Malas',
-    desc: 'Amortecedores novos para porta-malas com durabilidade e qualidade garantidas.',
+    Icone: IconRemanufaturado,
+    titulo: 'Amortecedores Remanufaturados',
+    desc: 'Referência em remanufatura na região. Máxima economia com total segurança e garantia.',
   },
   {
-    img: peca03,
-    titulo: 'Kit de Suspensão Completo',
-    desc: 'Kits com amortecedor, molas, pivôs e batentes para uma suspensão perfeita.',
+    Icone: IconSuspensao,
+    titulo: 'Suspensão em Geral',
+    desc: 'Diagnóstico completo, troca de buchas, pivôs, bandejas e braços oscilantes.',
   },
   {
-    img: peca04,
-    titulo: 'Pastilhas de Freio',
-    desc: 'Pastilhas de alta performance para garantir a segurança do seu veículo.',
+    Icone: IconFreios,
+    titulo: 'Freios',
+    desc: 'Substituição preventiva de pastilhas, discos, tambores e fluido de freio.',
   },
   {
-    img: peca05,
-    titulo: 'Pivôs e Buchas',
-    desc: 'Peças de alta qualidade para direção e suspensão com durabilidade comprovada.',
+    Icone: IconEscapamentos,
+    titulo: 'Escapamentos',
+    desc: 'Manutenção e troca de abafadores e tubulações para o correto fluxo de gases.',
   },
   {
-    img: peca06,
-    titulo: 'Instalação e Montagem',
-    desc: 'Serviços especializados com entrega grátis em toda a região de Bauru.',
+    Icone: IconOleo,
+    titulo: 'Troca de Óleo',
+    desc: 'Lubrificantes e filtros recomendados para manter a vida útil do motor em dia.',
   },
 ]
 
@@ -146,15 +199,15 @@ function App() {
       </section>
 
       {/* Seção 2 — Nossos Serviços */}
-      <section id="servicos" className="section section-gray">
+      <section id="servicos" className="section section-dark">
         <div className="container">
-          <h2 className="section-titulo">Nossos Serviços</h2>
-          <p className="section-sub">Qualidade e expertise em cada produto e serviço</p>
+          <h2 className="section-titulo">Nossos Serviços Especializados</h2>
+          <p className="section-sub">Mão de obra qualificada e componentes de primeira linha para o seu carro</p>
           <div className="servicos-grid">
             {servicos.map((s, i) => (
               <div key={i} className="servico-card">
-                <div className="servico-img-wrap">
-                  <img src={s.img} alt={s.titulo} className="servico-img" />
+                <div className="servico-icone">
+                  <s.Icone/>
                 </div>
                 <div className="servico-info">
                   <h3>{s.titulo}</h3>
